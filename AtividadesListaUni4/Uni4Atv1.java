@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Uni4Atv1 {
+    public static void main(String[] args) throws Exception {
+
+//A jornada de trabalho semanal de um funcionário é de 40 horas. O funcionário que trabalhar mais de 40 horas receberá hora extra, 
+//cujo cálculo é o valor da hora regular com um acréscimo de 50%. Escreva um algoritmo que leia o número de horas trabalhadas em um mês, 
+//o valor por hora e escreva o salário total do funcionário, que deverá ser acrescido das horas extras, 
+//caso tenham sido trabalhadas (considere que o mês possua 4 semanas exatas).
+//Para resolver este problema pode se utilizar do algoritmo descrito no fluxograma:
+        Scanner teclado = new Scanner(System.in);
+        
+        int horasmes = teclado.nextInt();
+        double horasvalor = teclado.nextDouble();
+
+        double salarioextra;
+        double salariototal = horasmes * horasvalor;
+
+        if (horasmes > 160){
+            salarioextra = (horasmes - 160) * (horasvalor / 2 );
+            salariototal = salariototal + salarioextra;
+        }
+        System.out.println("O salario total é de R$" + salariototal);
+
+        teclado.close();
+    }
+}
